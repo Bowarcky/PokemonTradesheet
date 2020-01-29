@@ -372,9 +372,12 @@ function getSpriteClass(pokemon) {
 }
 function getModelUrl(dexNo, spriteClass, gender, isShiny) {
     var modelUrl = "http://www.pkparaiso.com/imagenes/";
-    if (dexNo > 721 || spriteClass.endsWith("-alola") || spriteClass.endsWith("-10")) {
+    if ( (809 > dexNo > 721) || spriteClass.endsWith("-alola") || spriteClass.endsWith("-10")) {
         modelUrl += "sol-luna";
-    } else {
+    } 
+    else if  ( (809 > dexNo > 721) || spriteClass.endsWith("-galarian") || spriteClass.endsWith("-10"))
+        modelUrl += "espada_escudo";
+    else {
         modelUrl += "xy";
     }
     modelUrl += "/sprites/animados" + (isShiny ? "-shiny" : '') + "/" + spriteClass
